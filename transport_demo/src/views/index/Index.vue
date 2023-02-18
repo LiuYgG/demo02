@@ -11,9 +11,9 @@
                 <div class="logo">
                     <h3>Logo</h3>
                 </div>
-                <div class="address">
+                <!-- <div class="address">
                     <span>当前位置: [</span><a href="JavaScript:void(0);"> 上海 </a><span>]</span>
-                </div>
+                </div> -->
                 <div class="search">
                     <el-input type="text" style="width: 220px;" placeholder="请输入搜索内容"></el-input>
                     <el-button type="primary" icon="el-icon-search"></el-button>
@@ -90,13 +90,13 @@
 
                 // main：左侧菜单
                 sidebarIndex: 0,
-                sidebars:['菜单一', '菜单二', '菜单三', '菜单四'],
+                sidebars:['文本 / 文本 / 文本 ', '文本二 / 文本二 / 文本二'],
                 // main: 轮播图
                 carousel: [
-                    { image: 'https://img1.baidu.com/it/u=95046244,3436270039&fm=253&fmt=auto&app=138&f=JPEG?w=843&h=500' },
-                    { image: 'https://img1.baidu.com/it/u=3180272130,671725760&fm=253&fmt=auto&app=120&f=JPEG?w=506&h=300' },
-                    { image: 'https://img2.baidu.com/it/u=181125032,1070588788&fm=253&fmt=auto&app=138&f=JPEG?w=499&h=336' },
-                    { image: 'https://img0.baidu.com/it/u=3321194228,2911128357&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500' }
+                    { image: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.2oWLWOoWDM-Ef-oE-NeGyAHaDF?w=318&h=145&c=7&r=0&o=5&pid=1.7' },
+                    { image: 'https://tse3-mm.cn.bing.net/th/id/OIP-C.FuZQky1S9OVK0Mdqo1m9oAHaCU?w=350&h=109&c=7&r=0&o=5&pid=1.7' },
+                    { image: 'https://tse3-mm.cn.bing.net/th/id/OIP-C.ZffAQSZBzr8Sv0yKTg7xAAHaB7?w=298&h=91&c=7&r=0&o=5&pid=1.7' },
+                    { image: 'https://tse4-mm.cn.bing.net/th/id/OIP-C.te471EFek3IjhLRrheRUGwHaEU?w=271&h=180&c=7&r=0&o=5&pid=1.7' }
                 ]
             };
         },
@@ -122,9 +122,9 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 35px;
 }
-.address a{
-    text-decoration: none;
-}
+// .address a{
+//     text-decoration: none;
+// }
 .el-menu-item:hover{
     background-color: #fff;
     border-bottom: 2px solid #409EFF !important;
@@ -149,7 +149,7 @@ main内容专区
 }
 .sidebar {
     width: 200px;
-    background-color: #f0f0f0;
+    background-color: #faf7f7;
     border-right: 1px solid #ddd;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -168,6 +168,7 @@ main内容专区
 }
 li:hover {
   background-color: #e6f7ff;
+  width: 100%;
 }
 .content {
     flex: 1;
@@ -189,7 +190,7 @@ li:hover {
     width: 100%;
     min-width: 1200px;
     height: 60px;
-    background-color: #409EFF;
+    background-color: #f7f7f7;
 }
 
 </style>
