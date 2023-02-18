@@ -162,6 +162,7 @@ main内容专区
 }
 li:hover {
   background-color: #e6f7ff;
+  width: 100%;
 }
 .content {
     flex: 1;
