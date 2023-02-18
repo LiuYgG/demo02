@@ -60,7 +60,31 @@
             <!-- 2.空白区域：待商榷 -->
             <div class="nones"></div>
 
-            <!-- 3.推荐内容 -->
+            <!-- 
+                3.推荐内容
+                    - 相关标题
+                    - 描述
+                    - 发布人 / 发布时间
+            -->
+            <div class="recommend">
+                <el-row>
+                    <el-col :span="8" v-for="(card, index) in cards" :key="index">
+                        <el-card shadow="hover">
+                            <div slot="header">
+                                <span>{{ card.title}}</span>
+                            </div>
+                            <div class="rec-content">
+                                <p class="rec-desc">
+                                    {{ card.desc}}
+                                </p>
+                            </div>
+                            
+                            <div class="rec-author">{{ card.author}}</div>
+                            <div class="rec-time">{{ card.time}}</div>
+                        </el-card>
+                    </el-col>
+                </el-row>
+            </div>
         </main>
 
         <!-- 
@@ -90,10 +114,23 @@
                 sidebars:['菜单一', '菜单二', '菜单三', '菜单四'],
                 // main: 轮播图
                 carousel: [
-                    { image: 'https://img1.baidu.com/it/u=95046244,3436270039&fm=253&fmt=auto&app=138&f=JPEG?w=843&h=500' },
-                    { image: 'https://img1.baidu.com/it/u=3180272130,671725760&fm=253&fmt=auto&app=120&f=JPEG?w=506&h=300' },
-                    { image: 'https://img2.baidu.com/it/u=181125032,1070588788&fm=253&fmt=auto&app=138&f=JPEG?w=499&h=336' },
-                    { image: 'https://img0.baidu.com/it/u=3321194228,2911128357&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500' }
+                    { image: 'https://img0.baidu.com/it/u=3957758939,1600769248&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800' },
+                    { image: 'https://img2.baidu.com/it/u=3867960631,2923014190&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500' },
+                    { image: 'https://img0.baidu.com/it/u=2171411284,1924893541&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500' },
+                    { image: 'https://img0.baidu.com/it/u=3822016102,3026244821&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281' }
+                ],
+
+                // card
+                cards:[
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
+                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
                 ]
             };
         },
@@ -187,4 +224,19 @@ li:hover {
     background-color: #409EFF;
 }
 
+// 3.推荐内容
+.recommend{
+    display: block;
+    height: auto;
+    width: 1200px;
+    // justify-content: center;
+    margin: 10px auto;
+    overflow: hidden;
+}
+.el-card{
+    margin: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
 </style>
