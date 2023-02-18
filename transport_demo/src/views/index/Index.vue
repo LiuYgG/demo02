@@ -11,6 +11,9 @@
                 <div class="logo">
                     <h3>Logo</h3>
                 </div>
+                <div class="address">
+                    <span>当前位置: [</span><a href="JavaScript:void(0);"> 上海 </a><span>]</span>
+                </div>
                 <div class="search">
                     <el-input type="text" style="width: 220px;" placeholder="请输入搜索内容"></el-input>
                     <el-button type="primary" icon="el-icon-search"></el-button>
@@ -59,6 +62,8 @@
 
             <!-- 2.空白区域：待商榷 -->
             <div class="nones"></div>
+
+            <!-- 3.推荐内容 -->
         </main>
 
         <!-- 
@@ -102,7 +107,7 @@
 .nav-top{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 60px;
     line-height: 60px;
     padding: 0 20px;
@@ -116,6 +121,9 @@
     color: #409EFF;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 35px;
+}
+.address a{
+    text-decoration: none;
 }
 .el-menu-item:hover{
     background-color: #fff;
