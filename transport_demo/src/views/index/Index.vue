@@ -11,10 +11,10 @@
                 <div class="logo">
                     <h3>Logo</h3>
                 </div>
-                <div class="search">
+                <!-- <div class="search">
                     <el-input type="text" style="width: 220px;" placeholder="请输入搜索内容"></el-input>
                     <el-button type="primary" icon="el-icon-search"></el-button>
-                </div>
+                </div> -->
                 <div class="menu">
                     <el-menu mode="horizontal" :default-active="activeIndex">
                         <el-menu-item v-for="(item, index) in menus" :key="index" :index="index">{{ item }}</el-menu-item>
@@ -84,6 +84,7 @@
                         </el-card>
                     </el-col>
                 </el-row>
+                <div class="recommend-more"><a href="#">查看更多</a></div>
             </div>
         </main>
 
@@ -197,7 +198,7 @@ main内容专区
     margin-bottom: 10px;
     border-radius: 4px;
 }
-li:hover {
+.sidebar li:hover {
   background-color: #e6f7ff;
   width: 100%;
 }
@@ -218,10 +219,15 @@ li:hover {
 
 // 2. 空白待商榷位置
 .nones{
-    width: 100%;
-    min-width: 1200px;
-    height: 60px;
-    background-color: #409EFF;
+    display: flex;
+    height: 100px;
+    width: 1200px;
+    justify-content: center;
+    margin: 10px auto;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background: url('https://tse1-mm.cn.bing.net/th/id/OIP-C.nRlAFygdctTCHmIWN7GxRwHaEK?w=327&h=184&c=7&r=0&o=5&pid=1.7');
 }
 
 // 3.推荐内容
@@ -237,6 +243,25 @@ li:hover {
     margin: 10px;
     border-radius: 15px;
     cursor: pointer;
+    
+}
+.recommend-more{
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    width: 180px;
+    height: 40px;
+    // padding: 10px;
+    // display: flex;
+    // justify-content: center;
+    text-align: center;
+    margin: 0px auto;
+}
+.recommend-more a{
+    width: 180px !important;
+    // height: 40px;
+    text-decoration: none;
+    color: #409EFF;
+    line-height: 40px;
     
 }
 </style>
