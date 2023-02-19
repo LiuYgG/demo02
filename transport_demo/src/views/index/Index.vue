@@ -17,7 +17,9 @@
                 </div> -->
                 <div class="menu">
                     <el-menu mode="horizontal" :default-active="activeIndex">
-                        <el-menu-item v-for="(item, index) in menus" :key="index" :index="index">{{ item }}</el-menu-item>
+                        <el-menu-item v-for="(item, index) in menus" :key="index" :index="index">
+                            {{ item }}
+                        </el-menu-item>
                     </el-menu>
                 </div>
                 <div class="users">
@@ -45,7 +47,10 @@
             <div class="wrapper">
                 <div class="sidebar">
                     <ul :default-active="sidebarIndex">
-                        <li v-for="(item, index) in sidebars" :key="index"> {{ item }}</li>
+                        <li v-for="(item, index) in sidebars" :key="index"> 
+                            {{ item.title }}
+                            <span>{{ item.time }}</span>
+                        </li>
                     </ul>
                 </div>
                 <div class="content">
@@ -96,7 +101,7 @@
             5.备案信息
          -->
         <footer>
-            底部内容
+            
         </footer>
     </div>
 </template>
@@ -112,7 +117,13 @@
 
                 // main：左侧菜单
                 sidebarIndex: 0,
-                sidebars:['菜单一', '菜单二', '菜单三', '菜单四'],
+                sidebars:[
+                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
+                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
+                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
+                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
+                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
+                ],
                 // main: 轮播图
                 carousel: [
                     { image: 'https://img0.baidu.com/it/u=3957758939,1600769248&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800' },
@@ -180,9 +191,10 @@ main内容专区
     overflow: hidden;
 }
 .sidebar {
-    width: 200px;
-    background-color: #f0f0f0;
-    border-right: 1px solid #ddd;
+    width: 510px;
+    background-color: #F1F2F3;
+    border: 1px solid #EBEEF5;
+    box-shadow: #409EFF;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     padding: 20px;
@@ -197,10 +209,14 @@ main内容专区
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
+    border-bottom: 1px solid #118de0;
 }
 .sidebar li:hover {
   background-color: #e6f7ff;
   width: 100%;
+}
+.sidebar li::after{
+    border-bottom: none;
 }
 .content {
     flex: 1;
@@ -246,7 +262,7 @@ main内容专区
     
 }
 .recommend-more{
-    border: 1px solid #ccc;
+    border: 1px solid #ebeef5;
     border-radius: 15px;
     width: 180px;
     height: 40px;
@@ -255,13 +271,20 @@ main内容专区
     // justify-content: center;
     text-align: center;
     margin: 0px auto;
+    cursor: pointer;
 }
 .recommend-more a{
     width: 180px !important;
-    // height: 40px;
+    height: 40px;
     text-decoration: none;
     color: #409EFF;
     line-height: 40px;
     
 }
+
+/**
+    底部内容区域
+
+*/
+
 </style>
