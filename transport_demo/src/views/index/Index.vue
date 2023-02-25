@@ -6,35 +6,7 @@
             3. 菜单目录
             4. 用户中心
          -->
-        <header>
-            <div class="nav-top">
-                <div class="logo">
-                    <h3>Logo</h3>
-                </div>
-                <!-- <div class="search">
-                    <el-input type="text" style="width: 220px;" placeholder="请输入搜索内容"></el-input>
-                    <el-button type="primary" icon="el-icon-search"></el-button>
-                </div> -->
-                <div class="menu">
-                    <el-menu mode="horizontal" :default-active="activeIndex">
-                        <el-menu-item v-for="(item, index) in menus" :key="index" :index="index">
-                            {{ item }}
-                        </el-menu-item>
-                    </el-menu>
-                </div>
-                <div class="users">
-                    <el-dropdown>
-                        <span class="el-dropdown-link">
-                            <i class="el-icon-user"></i> 用户名<i class="el-icon-arrow-down el-icon--right"></i>
-                        </span>
-                        <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item>个人中心</el-dropdown-item>
-                            <el-dropdown-item>退出登录</el-dropdown-item>
-                        </el-dropdown-menu>
-                    </el-dropdown>
-                </div>
-            </div>
-        </header>
+        <Header></Header>
 
         <!-- 
             1. 详细分类 / banner轮播图
@@ -100,20 +72,23 @@
             4.二维码(APP下载)
             5.备案信息
          -->
-        <footer>
-            
-        </footer>
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
+// 引入header.vue
+    import Header  from "@/views/common/header.vue";
+    import Footer from "@/views/common/footer.vue"
+
     export default {
+        components:{
+            Header,
+            Footer
+        },
+
         data(){
             return{
-                // 默认选中
-                activeIndex: 0,
-                // menus的数据
-                menus:['首页', '全部工作', '关于我们'],
 
                 // main：左侧菜单
                 sidebarIndex: 0,
@@ -143,40 +118,16 @@
                     { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
                     { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
                     { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                ]
+                ],
+
+                // 底部相关
+                companys:['1.关于我们', '2.产品与服务', '3.联系方式']
             };
         },
     }
 </script>
 
 <style lang="less" scoped>
-.nav-top{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    line-height: 60px;
-    padding: 0 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-    background-color: #fff;
-    min-width: 1200px;
-    
-}
-.logo{
-    margin-left: 50px;
-    color: #409EFF;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 35px;
-}
-.el-menu-item:hover{
-    background-color: #fff;
-    border-bottom: 2px solid #409EFF !important;
-    transition: 0.3s;
-}
-.users{
-    margin-right: 50px;
-}
-
 /**
 
 main内容专区
@@ -282,9 +233,5 @@ main内容专区
     
 }
 
-/**
-    底部内容区域
-
-*/
 
 </style>
