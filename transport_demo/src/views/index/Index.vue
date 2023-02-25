@@ -145,7 +145,7 @@ main内容专区
     width: 510px;
     background-color: #F1F2F3;
     border: 1px solid #EBEEF5;
-    box-shadow: #409EFF;
+    box-shadow: 1px 1px 1px #c6c9c7;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     padding: 20px;
