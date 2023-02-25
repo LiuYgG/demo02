@@ -41,7 +41,7 @@
     display: flex;
     justify-content: space-evenly;
     background-color: #118de0;
-
+    min-width: 1200px;
 }
 .about-us{
     width: 200px;
