@@ -17,15 +17,15 @@
         <main>
             <!-- 详细分类 / banner轮播图 -->
             <div class="wrapper">
-                <div class="sidebar">
+                <!-- <div class="sidebar">
                     <ul :default-active="sidebarIndex">
                         <li v-for="(item, index) in sidebars" :key="index.id"> 
                             {{ item.titles }}
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="content">
-                    <el-carousel :interval="5000" arrow="always">
+                    <el-carousel :interval="5000" arrow="always" height="450px">
                         <el-carousel-item v-for="(item, index) in carousel" :key="index.id">
                         <img :src="item.imgUrl" alt="">
                         </el-carousel-item>
@@ -142,7 +142,7 @@ main内容专区
 */
 .wrapper {
     display: flex;
-    height: 300px;
+    height: auto;
     width: 1200px;
     justify-content: center;
     margin: 10px auto 0px;
@@ -181,7 +181,7 @@ main内容专区
 // }
 .content {
     flex: 1;
-    height: 100%;
+    height: auto;
     box-sizing: border-box;
 }
 .content .el-carousel{
@@ -190,7 +190,7 @@ main内容专区
 }
 .content img{
     width: 100%;
-    height: 300px;
+    height: 100%;
 }
 
 // 2. 空白待商榷位置
