@@ -203,7 +203,7 @@ main内容专区
     overflow: hidden;
     border: 1px solid #ccc;
     border-radius: 15px;
-    background: url('https://tse1-mm.cn.bing.net/th/id/OIP-C.nRlAFygdctTCHmIWN7GxRwHaEK?w=327&h=184&c=7&r=0&o=5&pid=1.7');
+    background: url('https://api.ixiaowai.cn/api/api.php');
 }
 
 // 3.推荐内容

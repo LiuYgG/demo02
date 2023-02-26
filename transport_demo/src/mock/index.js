@@ -16,7 +16,7 @@ Mock.mock('/api/sidebars', 'get', {
 Mock.mock('/api/banners', 'get', {
     status: 200,
     message: 'success',
-    'data|0-5': [{
+    'data|5': [{
         id: '@increment(5)',
         imgUrl: 'https://api.ixiaowai.cn/api/api.php'
     }]

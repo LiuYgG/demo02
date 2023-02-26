@@ -2,10 +2,10 @@
     <div>
         
         <header>
+            <div class="logo">
+                <h3>Logo</h3>
+            </div>
             <div class="nav-top">
-                <div class="logo">
-                    <h3>Logo</h3>
-                </div>
                 <!-- <div class="search">
                     <el-input type="text" style="width: 220px;" placeholder="请输入搜索内容"></el-input>
                     <el-button type="primary" icon="el-icon-search"></el-button>
@@ -51,9 +51,9 @@
 .nav-top{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    line-height: 60px;
+    justify-content: end;
+    height: 80px;
+    line-height: 80px;
     padding: 0 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
     background-color: #fff;
@@ -61,15 +61,25 @@
     
 }
 .logo{
-    margin-left: 50px;
+    line-height: 80px;
+    margin-left: 150px;
     color: #409EFF;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 35px;
+    position: absolute;
 }
 .el-menu-item:hover{
     background-color: #fff;
     border-bottom: 2px solid #409EFF !important;
+    height: 80px;
     transition: 0.3s;
+}
+.el-menu.el-menu--horizontal{
+    border-bottom: none;
+}
+.el-menu--horizontal>.el-menu-item{
+    height: 80px;
+    line-height: 80px;
 }
 .users{
     margin-right: 50px;
