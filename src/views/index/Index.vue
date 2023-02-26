@@ -143,16 +143,16 @@ main内容专区
     height: 300px;
     width: 1200px;
     justify-content: center;
-    margin: 10px auto;
+    margin: 10px auto 0px;
     overflow: hidden;
 }
 .sidebar {
     width: 510px;
+    height: 260px;
     background-color: #F1F2F3;
-    border: 1px solid #EBEEF5;
-    box-shadow: 1px 1px 1px #c6c9c7;
+    // border: 1px solid #EBEEF5;
+    // box-shadow: 1px 1px 1px #c6c9c7;
     border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
     padding: 20px;
 }
 .sidebar ul {
@@ -165,14 +165,13 @@ main内容专区
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
-    border-bottom: 1px solid #118de0;
     text-overflow: clip;
     overflow: hidden;
-    // width: 200px;
     height: 14px;
 }
 .sidebar li:hover {
   background-color: #e6f7ff;
+  padding: 10px;
   width: 100%;
 }
 .sidebar li::after{
@@ -181,12 +180,10 @@ main内容专区
 .content {
     flex: 1;
     height: 100%;
-    //   padding: 20px;
     box-sizing: border-box;
 }
 .content .el-carousel{
     border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
 }
 .content img{
     width: 100%;
@@ -199,10 +196,9 @@ main内容专区
     height: 100px;
     width: 1200px;
     justify-content: center;
-    margin: 10px auto;
+    margin: 0px auto 10px;
     overflow: hidden;
-    border: 1px solid #ccc;
-    border-radius: 15px;
+    border-radius: 0px 0px 15px 15px;
     background: url('https://api.ixiaowai.cn/api/api.php');
 }
 

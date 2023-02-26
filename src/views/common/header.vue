@@ -17,16 +17,23 @@
                         </el-menu-item>
                     </el-menu>
                 </div>
-                <div class="users">
-                    <el-dropdown>
-                        <span class="el-dropdown-link">
-                            <i class="el-icon-user"></i> 用户名<i class="el-icon-arrow-down el-icon--right"></i>
-                        </span>
-                        <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item>个人中心</el-dropdown-item>
-                            <el-dropdown-item>退出登录</el-dropdown-item>
-                        </el-dropdown-menu>
-                    </el-dropdown>
+                <div v-if="type === 0">
+                    <div class="users">
+                            <a href="/reg"> 注册账号 </a>
+                    </div>
+                </div>
+                <div v-if="type === 1">
+                    <div class="users">
+                        <el-dropdown>
+                            <span class="el-dropdown-link">
+                                <i class="el-icon-user"></i> 用户名<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>个人中心</el-dropdown-item>
+                                <el-dropdown-item>退出登录</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
+                    </div>
                 </div>
             </div>
         </header>
@@ -41,7 +48,10 @@
                 // 默认选中
                 activeIndex: 0,
                 // menus的数据
-                menus:['首页', '相关资讯', '服务支持', '招贤纳聘', '关于我们'],
+                menus:['首页', '搬家', '相关资讯', '服务支持', '招贤纳聘', '关于我们'],
+
+                // 显示用户模块
+                type: 0,
             }
         }
     }
@@ -73,6 +83,7 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 35px;
     position: absolute;
+    cursor: pointer;
 }
 .el-menu .el-menu-item{
     color: #606266;
@@ -99,5 +110,35 @@
 .users{
     margin-right: 50px;
     margin-left: 10px;
+    // line-height: 80px;
+    height: 85px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+.users .el-dropdown span{
+    display: inline-block;
+    height: 85px !important;
+    // background-color: #409EFF;
+    padding-bottom: 10px;
+}
+.users a{
+    display: inline-block;
+    position: relative; 
+    color: #606266; 
+    font-size: 14px;
+    // border-bottom: 1px solid red;
+    text-decoration: none;
+    padding-bottom: 5px;
+    height: 85px !important;
+    // background-color: #606266;
+}
+.users:hover{
+    background-color: #fff;
+    border-bottom: 2px solid #409EFF !important;
+    height: 85px;
+    // transition: 0.3s;
 }
 </style>

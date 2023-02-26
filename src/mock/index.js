@@ -18,7 +18,7 @@ Mock.mock('/api/banners', 'get', {
     message: 'success',
     'data|5': [{
         id: '@increment(5)',
-        imgUrl: 'https://api.ixiaowai.cn/api/api.php'
+        imgUrl: 'https://api.ixiaowai.cn/gqapi/gqapi.php'
     }]
 })
 
