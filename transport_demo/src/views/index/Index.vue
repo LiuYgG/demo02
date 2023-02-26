@@ -19,16 +19,15 @@
             <div class="wrapper">
                 <div class="sidebar">
                     <ul :default-active="sidebarIndex">
-                        <li v-for="(item, index) in sidebars" :key="index"> 
-                            {{ item.title }}
-                            <span>{{ item.time }}</span>
+                        <li v-for="(item, index) in sidebars" :key="index.id"> 
+                            {{ item.titles }}
                         </li>
                     </ul>
                 </div>
                 <div class="content">
                     <el-carousel :interval="5000" arrow="always">
-                        <el-carousel-item v-for="(item, index) in carousel" :key="index">
-                        <img :src="item.image" alt="">
+                        <el-carousel-item v-for="(item, index) in carousel" :key="index.id">
+                        <img :src="item.imgUrl" alt="">
                         </el-carousel-item>
                     </el-carousel>
                 </div>
@@ -45,19 +44,19 @@
             -->
             <div class="recommend">
                 <el-row>
-                    <el-col :span="8" v-for="(card, index) in cards" :key="index">
+                    <el-col :span="8" v-for="cardData in cardList" :key="cardData.id">
                         <el-card shadow="hover">
                             <div slot="header">
-                                <span>{{ card.title}}</span>
+                                <span>{{ cardData.title }}</span>
                             </div>
                             <div class="rec-content">
                                 <p class="rec-desc">
-                                    {{ card.desc}}
+                                    {{ cardData.desc }}
                                 </p>
                             </div>
                             
-                            <div class="rec-author">{{ card.author}}</div>
-                            <div class="rec-time">{{ card.time}}</div>
+                            <div class="rec-author">{{ cardData.author }}</div>
+                            <div class="rec-time">{{ cardData.time }}</div>
                         </el-card>
                     </el-col>
                 </el-row>
@@ -77,9 +76,10 @@
 </template>
 
 <script>
+
 // 引入header.vue
     import Header  from "@/views/common/header.vue";
-    import Footer from "@/views/common/footer.vue"
+    import Footer from "@/views/common/footer.vue";
 
     export default {
         components:{
@@ -87,42 +87,47 @@
             Footer
         },
 
+        
+
+
         data(){
             return{
 
                 // main：左侧菜单
                 sidebarIndex: 0,
-                sidebars:[
-                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
-                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
-                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
-                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
-                    {title:'《小花仙》新春回归活动今日上线 微信红包封面明日开抢', time:'2023-2-19' },
-                ],
+                sidebars:[],
+
                 // main: 轮播图
-                carousel: [
-                    { image: 'https://img0.baidu.com/it/u=3957758939,1600769248&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800' },
-                    { image: 'https://img2.baidu.com/it/u=3867960631,2923014190&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500' },
-                    { image: 'https://img0.baidu.com/it/u=2171411284,1924893541&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500' },
-                    { image: 'https://img0.baidu.com/it/u=3822016102,3026244821&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281' }
-                ],
+                carousel: [],
 
                 // card
-                cards:[
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                    { id:0, title:' 标题', desc:'描述', author:'创建人', time:'2023年2月18日'},
-                ],
+                cardList:[],
+                errorMsg:'没有数据',
 
-                // 底部相关
-                companys:['1.关于我们', '2.产品与服务', '3.联系方式']
             };
+        },
+
+        mounted(){
+            
+            // 获取首页 sidebars 
+            this.$axios.get('/api/sidebars').then(response => {
+                this.sidebars = response.data.data
+            })
+
+            // 获取首页 carousel 图片数据
+            this.$axios.get('/api/banners').then(response => {
+                this.carousel = response.data.data
+                console.log(response.data)
+            })
+
+            // 获取首页推荐 card 卡片数据
+            this.$axios.get('/api/news').then(response => {
+               this.cardList = response.data.data;
+            //    console.log(response.data.data);
+            }).catch(error => {
+                this.errorMsg = error.message
+            })
+            
         },
     }
 </script>
@@ -161,6 +166,10 @@ main内容专区
     margin-bottom: 10px;
     border-radius: 4px;
     border-bottom: 1px solid #118de0;
+    text-overflow: clip;
+    overflow: hidden;
+    // width: 200px;
+    height: 14px;
 }
 .sidebar li:hover {
   background-color: #e6f7ff;
@@ -211,6 +220,25 @@ main内容专区
     border-radius: 15px;
     cursor: pointer;
     
+}
+.rec-content .rec-desc{
+    overflow: hidden;
+    text-overflow: clip;
+    // margin: 5px 0px;
+    padding-bottom: 10px;
+    height: 100px;
+    border-bottom: 1px solid #EBEEF5;
+
+}
+.rec-author{
+    float: left;
+    width: 169px;
+    border-right: 1px solid #EBEEF5;
+    padding: 10px;
+}
+.rec-time{
+    float: right;
+    padding: 10px;
 }
 .recommend-more{
     border: 1px solid #ebeef5;
