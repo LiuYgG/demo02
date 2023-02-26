@@ -34,7 +34,9 @@
             </div>
 
             <!-- 2.空白区域：待商榷 -->
-            <div class="nones"></div>
+            <div class="nones">
+                <img src="@/assets/img/server_1.jpg" alt="" style="width: 100%;">
+            </div>
 
             <!-- 
                 3.推荐内容
@@ -193,13 +195,13 @@ main内容专区
 // 2. 空白待商榷位置
 .nones{
     display: flex;
-    height: 100px;
+    height: auto;
     width: 1200px;
     justify-content: center;
     margin: 0px auto 10px;
     overflow: hidden;
     border-radius: 0px 0px 15px 15px;
-    background: url('https://api.ixiaowai.cn/api/api.php');
+    // background: url('../img/server_1.jpg');
 }
 
 // 3.推荐内容
