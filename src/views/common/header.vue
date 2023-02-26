@@ -110,35 +110,49 @@
 .users{
     margin-right: 50px;
     margin-left: 10px;
-    // line-height: 80px;
-    height: 85px;
-    padding: 10px;
+    line-height: 53px;
+    width: 95px !important;
+    height: 79px !important;
+    line-height: 76px;
+    text-align: center;
     cursor: pointer;
-    background-color: #fff;
+    background-color: #9bd9e9;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
 }
 .users .el-dropdown span{
     display: inline-block;
     height: 85px !important;
-    // background-color: #409EFF;
     padding-bottom: 10px;
+    color: #fff;
 }
 .users a{
     display: inline-block;
     position: relative; 
-    color: #606266; 
+    color: #fff; 
     font-size: 14px;
-    // border-bottom: 1px solid red;
     text-decoration: none;
     padding-bottom: 5px;
-    height: 85px !important;
-    // background-color: #606266;
+    height: 73px !important;
+    text-align: center;
+    width: 95px;
+    line-height: 76px;
 }
 .users:hover{
-    background-color: #fff;
     border-bottom: 2px solid #409EFF !important;
-    height: 85px;
+    color: #606266 !important;
+    line-height: 76px;
+    text-align: center;
+    width: 95px !important;
+    height: 79px !important;
     // transition: 0.3s;
+}
+.users a:hover{
+    color: #606266;
+    background-color: #fff;
+    height: 73px !important;
+    text-align: center;
+    line-height: 75px;
+    width: 95px;
 }
 </style>

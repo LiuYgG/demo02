@@ -34,7 +34,7 @@
             </div>
 
             <!-- 2.空白区域：待商榷 -->
-            <div class="nones">
+            <div class="servers">
                 <img src="@/assets/img/server_1.jpg" alt="" style="width: 100%;">
             </div>
 
@@ -44,7 +44,7 @@
                     - 描述
                     - 发布人 / 发布时间
             -->
-            <div class="recommend">
+            <!-- <div class="recommend">
                 <el-row>
                     <el-col :span="8" v-for="cardData in cardList" :key="cardData.id">
                         <el-card shadow="hover">
@@ -63,7 +63,7 @@
                     </el-col>
                 </el-row>
                 <div class="recommend-more"><a href="#">查看更多</a></div>
-            </div>
+            </div> -->
         </main>
 
         <!-- 
@@ -194,7 +194,7 @@ main内容专区
 }
 
 // 2. 空白待商榷位置
-.nones{
+.servers{
     display: flex;
     height: auto;
     width: 1200px;
@@ -206,59 +206,59 @@ main内容专区
 }
 
 // 3.推荐内容
-.recommend{
-    display: block;
-    height: auto;
-    width: 1200px;
-    // justify-content: center;
-    margin: 10px auto;
-    overflow: hidden;
-}
-.el-card{
-    margin: 10px;
-    border-radius: 15px;
-    cursor: pointer;
+// .recommend{
+//     display: block;
+//     height: auto;
+//     width: 1200px;
+//     // justify-content: center;
+//     margin: 10px auto;
+//     overflow: hidden;
+// }
+// .el-card{
+//     margin: 10px;
+//     border-radius: 15px;
+//     cursor: pointer;
     
-}
-.rec-content .rec-desc{
-    overflow: hidden;
-    text-overflow: clip;
-    // margin: 5px 0px;
-    padding-bottom: 10px;
-    height: 100px;
-    border-bottom: 1px solid #EBEEF5;
+// }
+// .rec-content .rec-desc{
+//     overflow: hidden;
+//     text-overflow: clip;
+//     // margin: 5px 0px;
+//     padding-bottom: 10px;
+//     height: 100px;
+//     border-bottom: 1px solid #EBEEF5;
 
-}
-.rec-author{
-    float: left;
-    width: 169px;
-    border-right: 1px solid #EBEEF5;
-    padding: 10px;
-}
-.rec-time{
-    float: right;
-    padding: 10px;
-}
-.recommend-more{
-    border: 1px solid #ebeef5;
-    border-radius: 15px;
-    width: 180px;
-    height: 40px;
-    // padding: 10px;
-    // display: flex;
-    // justify-content: center;
-    text-align: center;
-    margin: 0px auto;
-    cursor: pointer;
-}
-.recommend-more a{
-    width: 180px !important;
-    height: 40px;
-    text-decoration: none;
-    color: #409EFF;
-    line-height: 40px;
+// }
+// .rec-author{
+//     float: left;
+//     width: 169px;
+//     border-right: 1px solid #EBEEF5;
+//     padding: 10px;
+// }
+// .rec-time{
+//     float: right;
+//     padding: 10px;
+// }
+// .recommend-more{
+//     border: 1px solid #ebeef5;
+//     border-radius: 15px;
+//     width: 180px;
+//     height: 40px;
+//     // padding: 10px;
+//     // display: flex;
+//     // justify-content: center;
+//     text-align: center;
+//     margin: 0px auto;
+//     cursor: pointer;
+// }
+// .recommend-more a{
+//     width: 180px !important;
+//     height: 40px;
+//     text-decoration: none;
+//     color: #409EFF;
+//     line-height: 40px;
     
-}
+// }
 
 
 </style>

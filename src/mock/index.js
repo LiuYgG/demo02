@@ -23,14 +23,14 @@ Mock.mock('/api/banners', 'get', {
 })
 
 // 创建首页推荐数据展示接口
-Mock.mock('/api/news', 'get',{
-    status: 200,
-    message:'获取成功',
-    'data|9':[{
-        id: '@increment(100)',
-        title:'@cword(2,10)',
-        desc:'@cparagraph(3,7)',
-        author:'@cname',
-        time: '@date("yyyy / MM / dd")'
-    }]
-})
+// Mock.mock('/api/news', 'get',{
+//     status: 200,
+//     message:'获取成功',
+//     'data|9':[{
+//         id: '@increment(100)',
+//         title:'@cword(2,10)',
+//         desc:'@cparagraph(3,7)',
+//         author:'@cname',
+//         time: '@date("yyyy / MM / dd")'
+//     }]
+// })
