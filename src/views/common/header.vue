@@ -48,6 +48,13 @@
 </script>
 
 <style lang="less" scoped>
+/**
+    导航共用
+*/
+.nav-top,
+.el-menu{
+    background-color: #09c5f7;
+}
 .nav-top{
     display: flex;
     align-items: center;
@@ -56,7 +63,6 @@
     line-height: 80px;
     padding: 0 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-    background-color: #fff;
     min-width: 1200px;
     
 }
@@ -68,11 +74,20 @@
     font-size: 35px;
     position: absolute;
 }
+.el-menu .el-menu-item{
+    color: #606266;
+}
 .el-menu-item:hover{
     background-color: #fff;
     border-bottom: 2px solid #409EFF !important;
     height: 80px;
     transition: 0.3s;
+}
+.el-menu-item:active,
+.is-active{
+    background-color: #fff;
+    border-bottom: 2px solid #409EFF !important;
+    height: 80px;
 }
 .el-menu.el-menu--horizontal{
     border-bottom: none;
@@ -83,5 +98,6 @@
 }
 .users{
     margin-right: 50px;
+    margin-left: 10px;
 }
 </style>

@@ -31,6 +31,6 @@ Mock.mock('/api/news', 'get',{
         title:'@cword(2,10)',
         desc:'@cparagraph(3,7)',
         author:'@cname',
-        time: '@date("yyyy-MM-dd")'
+        time: '@date("yyyy / MM / dd")'
     }]
 })
