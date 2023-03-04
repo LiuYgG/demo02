@@ -8,6 +8,9 @@
                     </ul>
                 </div>
                 <div class="qr-code">
+                    <div class="qr-code-ti">
+                        下载APP
+                    </div>
                     <div class="qr-code-APP">
                         <img src="@/assets/img/test.png" alt="" sizes="" srcset="">
                     </div>
@@ -57,6 +60,13 @@
     margin: 10px 0px 0px 0px;
 }
 
+.qr-code-ti{
+    color: aliceblue;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+}
 .qr-code .qr-code-APP img{
     position: relative;
     top: 2px;

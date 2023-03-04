@@ -25,8 +25,8 @@
                     </ul>
                 </div> -->
                 <div class="content">
-                    <el-carousel :interval="5000" arrow="always" height="450px">
-                        <el-carousel-item v-for="(item, index) in carousel" :key="index.id">
+                    <el-carousel :interval="5000" arrow="always" height="700px">
+                        <el-carousel-item v-for="item in carousel" :key="item.id">
                         <img :src="item.imgUrl" alt="">
                         </el-carousel-item>
                     </el-carousel>
@@ -39,30 +39,34 @@
             </div>
 
             <!-- 
-                3.推荐内容
-                    - 相关标题
-                    - 描述
-                    - 发布人 / 发布时间
+                3.服务类别
             -->
-            <div class="recommend">
+
+            <div class="serves">
+                <div class="server-title">
+                    <p>我们的服务</p>
+                </div>
                 <el-row>
-                    <el-col :span="8" v-for="cardData in cardList" :key="cardData.id">
+                    <el-col :span="6" v-for="cardData in cardList" :key="cardData">
                         <el-card shadow="hover">
-                            <div slot="header">
+                            <!-- <div slot="header">
                                 <span>{{ cardData.title }}</span>
-                            </div>
-                            <div class="rec-content">
-                                <p class="rec-desc">
-                                    {{ cardData.desc }}
+                            </div> -->
+                            <div class="serve-content">
+                                <div class="serve-img">
+                                    <img :src="cardData.imgURL" alt="">
+                                </div>
+                                <p class="serve-title">
+                                    {{ cardData.title }}
                                 </p>
                             </div>
                             
-                            <div class="rec-author">{{ cardData.author }}</div>
-                            <div class="rec-time">{{ cardData.time }}</div>
+                            <!-- <div class="serve-author">{{ cardData.author }}</div>
+                            <div class="serve-time">{{ cardData.time }}</div> -->
                         </el-card>
                     </el-col>
                 </el-row>
-                <div class="recommend-more"><a href="#">查看更多</a></div>
+                <!-- <div class="serves-more"><a href="#">查看更多</a></div> -->
             </div>
         </main>
 
@@ -100,11 +104,19 @@
                 sidebars:[],
 
                 // main: 轮播图
-                carousel: [],
+                carousel: [
+                    {imgUrl:'https://15446763.s61i.faiusr.com/2/AD0I6_WuBxACGAAgm4zO0AUozs3oWzCADzi8BQ.jpg.webp'},
+                    {imgUrl:'https://15446763.s61i.faiusr.com/2/AD0I6_WuBxACGAAguJHO0AUo6-DyogcwgA84vAU.jpg'}
+                ],
 
                 // card
-                cardList:[],
-                errorMsg:'没有数据',
+                cardList:[
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgwKPO0AUomLTFrQEwUDhQ.png.webp', title: '居民搬家'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgoaTO0AUovr251gMwUDhQ.png.webp', title: 'VIP搬家'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAguqTO0AUowOWVCTBQOFA.png.webp', title: '仓储服务'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgsKTO0AUo2pPGjQYwUDhQ.png.webp', title: '效率准时'},
+                ],
+                // errorMsg:'没有数据',
 
             };
         },
@@ -117,18 +129,18 @@
             // })
 
             // 获取首页 carousel 图片数据
-            this.$axios.get('/api/banners').then(response => {
-                this.carousel = response.data.data
-                console.log(response.data)
-            })
+            // this.$axios.get('/api/banners').then(response => {
+            //     this.carousel = response.data.data
+            //     console.log(response.data)
+            // })
 
             // 获取首页推荐 card 卡片数据
-            this.$axios.get('/api/news').then(response => {
-               this.cardList = response.data.data;
-            //    console.log(response.data.data);
-            }).catch(error => {
-                this.errorMsg = error.message
-            })
+            // this.$axios.get('/api/news').then(response => {
+            //    this.cardList = response.data.data;
+            // //    console.log(response.data.data);
+            // }).catch(error => {
+            //     this.errorMsg = error.message
+            // })
             
         },
     }
@@ -143,9 +155,9 @@ main内容专区
 .wrapper {
     display: flex;
     height: auto;
-    width: 1200px;
+    min-width: 1200px;
     justify-content: center;
-    margin: 10px auto 0px;
+    // margin: 10px auto 0px;
     overflow: hidden;
 }
 // .sidebar {
@@ -184,10 +196,6 @@ main内容专区
     height: auto;
     box-sizing: border-box;
 }
-.content .el-carousel{
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
-}
 .content img{
     width: 100%;
     height: 100%;
@@ -197,16 +205,16 @@ main内容专区
 .servers{
     display: flex;
     height: auto;
-    width: 1200px;
+    min-width: 1200px;
     justify-content: center;
     margin: 0px auto 10px;
     overflow: hidden;
-    border-radius: 0px 0px 15px 15px;
+    // border-radius: 0px 0px 15px 15px;
     // background: url('../img/server_1.jpg');
 }
 
-// 3.推荐内容
-.recommend{
+// 3.服务类别
+.serves{
     display: block;
     height: auto;
     width: 1200px;
@@ -218,28 +226,36 @@ main内容专区
     margin: 10px;
     border-radius: 15px;
     cursor: pointer;
-    
 }
-.rec-content .rec-desc{
+.serve-content{
+    padding: 5px;
+}
+.serve-content .serve-img{
+    display: flex;
+    justify-content: center;
+}
+.serve-content .serve-title{
     overflow: hidden;
     text-overflow: clip;
-    // margin: 5px 0px;
-    padding-bottom: 10px;
-    height: 100px;
-    border-bottom: 1px solid #EBEEF5;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    // padding-bottom: 10px;
+    // height: 100px;
+    // border-bottom: 1px solid #EBEEF5;
 
 }
-.rec-author{
-    float: left;
-    width: 169px;
-    border-right: 1px solid #EBEEF5;
-    padding: 10px;
-}
-.rec-time{
-    float: right;
-    padding: 10px;
-}
-.recommend-more{
+// .serve-author{
+//     float: left;
+//     width: 169px;
+//     border-right: 1px solid #EBEEF5;
+//     padding: 10px;
+// }
+// .serve-time{
+//     float: right;
+//     padding: 10px;
+// }
+.serves-more{
     border: 1px solid #ebeef5;
     border-radius: 15px;
     width: 180px;
@@ -251,7 +267,7 @@ main内容专区
     margin: 0px auto;
     cursor: pointer;
 }
-.recommend-more a{
+.serves-more a{
     width: 180px !important;
     height: 40px;
     text-decoration: none;
