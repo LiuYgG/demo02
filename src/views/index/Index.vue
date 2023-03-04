@@ -68,6 +68,13 @@
                 </el-row>
                 <!-- <div class="serves-more"><a href="#">查看更多</a></div> -->
             </div>
+
+            <!-- 收费标准 -->
+            <div class="salary-area">
+                <div class="salary-title">
+                    <p>收费标准</p>
+                </div>
+            </div>
         </main>
 
         <!-- 
@@ -115,6 +122,12 @@
                     {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgoaTO0AUovr251gMwUDhQ.png.webp', title: 'VIP搬家'},
                     {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAguqTO0AUowOWVCTBQOFA.png.webp', title: '仓储服务'},
                     {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgsKTO0AUo2pPGjQYwUDhQ.png.webp', title: '效率准时'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgtaTO0AUo-8_9BzBQOFA.png.webp', title: '包装服务'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgq6TO0AUo8d3iogMwUDhQ.png.webp', title: '微搬家'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgm6TO0AUokLq4iQYwUDhQ.png.webp', title: '办公室搬迁'},
+                    {imgURL:'https://15416486.s61i.faiusr.com/4/AD0IpvmsBxAEGAAgkb660AUo6bzHlwEwWjhS.png', title: '快运物流'},
+                    
+                    
                 ],
                 // errorMsg:'没有数据',
 
@@ -199,6 +212,13 @@ main内容专区
 .content img{
     width: 100%;
     height: 100%;
+}
+
+// 轮播图
+.el-carousel__arrow{
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 36px !important;
 }
 
 // 2. 空白待商榷位置
