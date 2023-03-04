@@ -18,3 +18,5 @@
     - index页面新增 sidebar 接口数据
     - index页面新增banners的图片mock接口
     - index页面新增推荐相关card卡片mock接口数据
+- 2023年3月4日21:39:38
+    - index页面重构
