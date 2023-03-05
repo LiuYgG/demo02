@@ -9,21 +9,14 @@
         <Header></Header>
 
         <!-- 
-            1. 详细分类 / banner轮播图
+            1. banner轮播图
             2. 空白区域-待商榷
             3. 推荐内容
             4. 城市导航
          -->
         <main>
-            <!-- 详细分类 / banner轮播图 -->
+            <!-- banner轮播图 -->
             <div class="wrapper">
-                <!-- <div class="sidebar">
-                    <ul :default-active="sidebarIndex">
-                        <li v-for="(item, index) in sidebars" :key="index.id"> 
-                            {{ item.titles }}
-                        </li>
-                    </ul>
-                </div> -->
                 <div class="content">
                     <el-carousel :interval="5000" arrow="always" height="700px">
                         <el-carousel-item v-for="item in carousel" :key="item.id">
@@ -43,30 +36,29 @@
             -->
 
             <div class="serves">
-                <div class="server-title">
+                <div class="serve-title">
                     <p>我们的服务</p>
                 </div>
                 <el-row>
                     <el-col :span="6" v-for="cardData in cardList" :key="cardData">
                         <el-card shadow="hover">
-                            <!-- <div slot="header">
-                                <span>{{ cardData.title }}</span>
-                            </div> -->
                             <div class="serve-content">
                                 <div class="serve-img">
                                     <img :src="cardData.imgURL" alt="">
                                 </div>
-                                <p class="serve-title">
-                                    {{ cardData.title }}
+                                <p class="serve-content">
+                                    {{ cardData.content }}
                                 </p>
                             </div>
-                            
-                            <!-- <div class="serve-author">{{ cardData.author }}</div>
-                            <div class="serve-time">{{ cardData.time }}</div> -->
                         </el-card>
                     </el-col>
                 </el-row>
-                <!-- <div class="serves-more"><a href="#">查看更多</a></div> -->
+
+                <div class="fullServe">
+                    <div class="fullServe-left">
+                        <img src="" alt="">
+                    </div>
+                </div>
             </div>
 
             <!-- 收费标准 -->
@@ -118,14 +110,14 @@
 
                 // card
                 cardList:[
-                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgwKPO0AUomLTFrQEwUDhQ.png.webp', title: '居民搬家'},
-                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgoaTO0AUovr251gMwUDhQ.png.webp', title: 'VIP搬家'},
-                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAguqTO0AUowOWVCTBQOFA.png.webp', title: '仓储服务'},
-                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgsKTO0AUo2pPGjQYwUDhQ.png.webp', title: '效率准时'},
-                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgtaTO0AUo-8_9BzBQOFA.png.webp', title: '包装服务'},
-                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgq6TO0AUo8d3iogMwUDhQ.png.webp', title: '微搬家'},
-                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgm6TO0AUokLq4iQYwUDhQ.png.webp', title: '办公室搬迁'},
-                    {imgURL:'https://15416486.s61i.faiusr.com/4/AD0IpvmsBxAEGAAgkb660AUo6bzHlwEwWjhS.png', title: '快运物流'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgwKPO0AUomLTFrQEwUDhQ.png.webp', content: '居民搬家'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgoaTO0AUovr251gMwUDhQ.png.webp', content: 'VIP搬家'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAguqTO0AUowOWVCTBQOFA.png.webp', content: '仓储服务'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgsKTO0AUo2pPGjQYwUDhQ.png.webp', content: '效率准时'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgtaTO0AUo-8_9BzBQOFA.png.webp', content: '包装服务'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgq6TO0AUo8d3iogMwUDhQ.png.webp', content: '微搬家'},
+                    {imgURL:'https://15446763.s61i.faiusr.com/4/AD0I6_WuBxAEGAAgm6TO0AUokLq4iQYwUDhQ.png.webp', content: '办公室搬迁'},
+                    {imgURL:'https://15416486.s61i.faiusr.com/4/AD0IpvmsBxAEGAAgkb660AUo6bzHlwEwWjhS.png', content: '快运物流'},
                     
                     
                 ],
@@ -173,37 +165,7 @@ main内容专区
     // margin: 10px auto 0px;
     overflow: hidden;
 }
-// .sidebar {
-//     width: 510px;
-//     height: 260px;
-//     background-color: #F1F2F3;
-//     // border: 1px solid #EBEEF5;
-//     // box-shadow: 1px 1px 1px #c6c9c7;
-//     border-top-left-radius: 15px;
-//     padding: 20px;
-// }
-// .sidebar ul {
-//     list-style: none;
-//     margin: 0;
-//     padding: 0;
-// }
-// .sidebar li {
-//     cursor: pointer;
-//     padding: 10px;
-//     margin-bottom: 10px;
-//     border-radius: 4px;
-//     text-overflow: clip;
-//     overflow: hidden;
-//     height: 14px;
-// }
-// .sidebar li:hover {
-//   background-color: #e6f7ff;
-//   padding: 10px;
-//   width: 100%;
-// }
-// .sidebar li::after{
-//     border-bottom: none;
-// }
+
 .content {
     flex: 1;
     height: auto;
@@ -233,8 +195,10 @@ main内容专区
     // background: url('../img/server_1.jpg');
 }
 
-// 3.服务类别
-.serves{
+// 服务类别
+// 收费标准区域
+.serves,
+.salary-area{
     display: block;
     height: auto;
     width: 1200px;
@@ -254,7 +218,7 @@ main内容专区
     display: flex;
     justify-content: center;
 }
-.serve-content .serve-title{
+.serve-content .serve-content{
     overflow: hidden;
     text-overflow: clip;
     display: flex;
@@ -265,16 +229,7 @@ main内容专区
     // border-bottom: 1px solid #EBEEF5;
 
 }
-// .serve-author{
-//     float: left;
-//     width: 169px;
-//     border-right: 1px solid #EBEEF5;
-//     padding: 10px;
-// }
-// .serve-time{
-//     float: right;
-//     padding: 10px;
-// }
+
 .serves-more{
     border: 1px solid #ebeef5;
     border-radius: 15px;
@@ -295,6 +250,7 @@ main内容专区
     line-height: 40px;
     
 }
+
 
 
 </style>
