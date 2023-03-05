@@ -38,6 +38,7 @@
             <div class="serves">
                 <div class="serve-title">
                     <p>主要服务</p>
+                    <span></span>
                 </div>
                 <el-row>
                     <el-col :span="6" v-for="cardData in cardList" :key="cardData">
@@ -89,10 +90,25 @@
             </div>
 
             <!-- 我们的承诺 -->
-            <div class="salary-area">
-                <div class="salary-title">
-                    <p>收费标准</p>
+            <div class="we-promise">
+                <div class="promise-title">
+                    <p>我们承诺</p>
                 </div>
+                <div class="promise-title-en">
+                    <span>SERVICE PROMISE</span>
+                </div>
+                <div class="promise-wrap">
+                    <div class="promise-card" v-for=" card in promises " :key="card">
+                        <div class="promise-card-icon">
+                            <span>{{ card.num }}</span>
+                        </div>
+                        <div class="promise-card-content">
+                            <h3>{{ card.title }}</h3>
+                            <span>{{ card.desc }}</span>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </main>
 
@@ -150,6 +166,16 @@
                 ],
                 // errorMsg:'没有数据',
 
+
+                // promise
+                promises:[
+                    { num: 'A', title: '先服务后付款', desc: '保证先服务后付款，中间无任何隐形收费'},
+                    { num: 'B', title: '安全', desc: '保证客户指定时间内安全完成服务'},
+                    { num: 'C', title: '先服务后付款不甩单', desc: '保证接单后不无缘无故取消订单，不会甩单'},
+                    { num: 'D', title: '费用低', desc: '保证收费标准不比同行高'},
+                    { num: 'E', title: '款损坏率低', desc: '搬迁过程中零投诉、零损坏率、零丢失率'},
+                    { num: 'F', title: '时间：延时赔款', desc: '搬家延误1小时赔偿客户50元，延误2小时赔偿客户100元'},
+                ]
             };
         },
 

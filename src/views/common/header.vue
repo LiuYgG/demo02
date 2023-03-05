@@ -63,7 +63,7 @@
 */
 .nav-top,
 .el-menu{
-    background-color: #09c5f7;
+    background-color: #ffffff;
 }
 .nav-top{
     display: flex;
