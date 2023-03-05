@@ -1,19 +1,7 @@
 <template>
     <div>
-        <!-- 
-            1. Logo
-            2. 搜索框
-            3. 菜单目录
-            4. 用户中心
-         -->
         <Header></Header>
 
-        <!-- 
-            1. banner轮播图
-            2. 空白区域-待商榷
-            3. 推荐内容
-            4. 城市导航
-         -->
         <main>
             <!-- banner轮播图 -->
             <div class="wrapper">
@@ -34,7 +22,6 @@
             <!-- 
                 3.服务类别
             -->
-
             <div class="serves">
                 <div class="serve-title">
                     <p>主要服务</p>
@@ -55,6 +42,7 @@
                     </el-col>
                 </el-row>
             </div>
+
             <!-- 简要 -->
             <div class="fullServe">
                 <div class="fullServe-left"></div>
@@ -126,13 +114,6 @@
             </div>
         </main>
 
-        <!-- 
-            1.关于我们
-            2.产品与服务
-            3.联系方式
-            4.二维码(APP下载)
-            5.备案信息
-         -->
         <Footer></Footer>
     </div>
 </template>
