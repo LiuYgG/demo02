@@ -107,8 +107,22 @@
                             <span>{{ card.desc }}</span>
                         </div>
                     </div>
+                </div>  
+            </div>
+
+
+            <!-- 车型 -->
+            <div class="myCar">
+                <div class="car-info-title">
+                    <p>车型详情</p>
                 </div>
-                
+                <div class="car-info-content">
+                    <el-carousel :interval="4000" type="card" height="400px" arrow="always">
+                        <el-carousel-item v-for="item in cars" :key="item">
+                            <img :src="item.imgUrl" alt="" style="border: 1px solid #ccc; background-color: aliceblue;">
+                        </el-carousel-item>
+                    </el-carousel>
+                </div>
             </div>
         </main>
 
@@ -175,6 +189,17 @@
                     { num: 'D', title: '费用低', desc: '保证收费标准不比同行高'},
                     { num: 'E', title: '款损坏率低', desc: '搬迁过程中零投诉、零损坏率、零丢失率'},
                     { num: 'F', title: '时间：延时赔款', desc: '搬家延误1小时赔偿客户50元，延误2小时赔偿客户100元'},
+                ],
+
+                // 车型
+                cars:[
+                    {imgUrl: 'https://oimg.huolala.cn/ops/prd/2021-04-15/4b314eaa-894d-6322-2838-8de34681f5da.png'},
+                    {imgUrl: 'https://oimg.huolala.cn/ops/prd/2021-04-15/257e4a11-fcbd-580c-3d8f-faa58d14645f.png'},
+                    {imgUrl: 'https://oimg.huolala.cn/ops/prd/2021-04-15/4cac921e-863f-9f6c-f420-3062087b6daa.png'},
+                    {imgUrl: 'https://oimg.huolala.cn/ops/prd/2021-04-15/1b56d000-3e80-f168-0afc-83ff755d6122.png'},
+                    {imgUrl: 'https://oimg.huolala.cn/ops/prd/2021-04-15/993bc0f0-480a-fbf2-0d87-5a0fb2958eb7.png'},
+                    {imgUrl: 'https://oimg.huolala.cn/ops/prd/2021-04-15/cf317e66-036e-ad83-e636-016b3db0ee07.png'},
+                    {imgUrl: 'https://oimg.huolala.cn/ops/prd/2021-04-15/a455ef85-e888-71ec-d3d0-7d6b7b366b74.png'},
                 ]
             };
         },

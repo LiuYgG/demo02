@@ -105,16 +105,13 @@ main内容专区
     width: 100%;
     min-width: 1200px;
     height: 622px;
-    /* position: relative; */
     display: flex;
-    /* justify-items: flex-start; */
     margin-top: 20px;
 }
 .fullServe-left{
     float: left;
     width: 1200px;
     height: 622px;
-    /* border: 1px solid; */
 }
 .fullServe-right{
     float: left;
@@ -128,8 +125,6 @@ main内容专区
 .fullServe-right-icon,
 .fullServe-right-title{
     float: left;
-    /* height: auto;
-    width: 96px; */
 }
 .fullServe-right-title{
     margin-left: 20px;
@@ -215,4 +210,25 @@ main内容专区
 }
 .promise-card-content span{
     font-size: 12px;
+}
+
+/* 车型 */
+.myCar{
+    width: 100%;
+    height: 500px;
+    /* background-color: #fff; */
+}
+.car-info-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.car-info-content{
+    width: 1200px;
+    margin: 10px auto;
+}
+.car-info-content .el-carousel__arrow{
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
 }
