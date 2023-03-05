@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
-import './assets/css/gloabal.css'
 
+// CSS
+import './assets/css/gloabal.css'
+import './assets/css/index.css'
 // 引入mockjs文件并使用产生的数据
 require('./mock/index.js')
 

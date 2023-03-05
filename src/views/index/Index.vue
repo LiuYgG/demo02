@@ -27,7 +27,7 @@
             </div>
 
             <!-- 2.空白区域：待商榷 -->
-            <div class="servers">
+            <div class="nones">
                 <img src="@/assets/img/server_1.jpg" alt="" style="width: 100%;">
             </div>
 
@@ -37,7 +37,7 @@
 
             <div class="serves">
                 <div class="serve-title">
-                    <p>我们的服务</p>
+                    <p>主要服务</p>
                 </div>
                 <el-row>
                     <el-col :span="6" v-for="cardData in cardList" :key="cardData">
@@ -53,15 +53,42 @@
                         </el-card>
                     </el-col>
                 </el-row>
-
-                <div class="fullServe">
-                    <div class="fullServe-left">
-                        <img src="" alt="">
+            </div>
+            <!-- 简要 -->
+            <div class="fullServe">
+                <div class="fullServe-left"></div>
+                <div class="fullServe-right">
+                    <div class="fullServe-right-card">
+                        <div class="fullServe-right-icon">
+                            <img src="https://11912270.s61i.faiusr.com/4/AD0IzojXBRAEGAAgqaylwQUo28aP5QMwTjhF.png.webp" alt="">
+                        </div>
+                        <div class="fullServe-right-title">
+                            <h2>透明价格</h2>
+                            <span>我们是行业标准的先行者，不希望我们掌握报价的权利，而是提供标准，让您自己能够计算自己的搬家费用。</span>
+                        </div>
+                    </div>
+                    <div class="fullServe-right-card">
+                        <div class="fullServe-right-icon">
+                            <img src="https://11912270.s61i.faiusr.com/4/AD0IzojXBRAEGAAgqqylwQUo68a5KjA2OEE.png.webp" alt="">
+                        </div>
+                        <div class="fullServe-right-title">
+                            <h2>准时上门</h2>
+                            <span>我们坚持把搬家时间精确到时刻，而不是日子，我们会在您希望的搬家时间准时到达。</span>
+                        </div>
+                    </div>
+                    <div class="fullServe-right-card">
+                        <div class="fullServe-right-icon">
+                            <img src="https://11912270.s61i.faiusr.com/4/AD0IzojXBRAEGAAgrKylwQUoor2DoAQwQTgv.png.webp" alt="">
+                        </div>
+                        <div class="fullServe-right-title">
+                            <h2>清洁闪亮的卡车</h2>
+                            <span>我们极端重视对细节的关注，所以我们的卡车和制服一尘不染，工人的举动是经过精心培训养成的。</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 收费标准 -->
+            <!-- 我们的承诺 -->
             <div class="salary-area">
                 <div class="salary-title">
                     <p>收费标准</p>
@@ -152,104 +179,7 @@
 </script>
 
 <style lang="less" scoped>
-/**
 
-main内容专区
-
-*/
-.wrapper {
-    display: flex;
-    height: auto;
-    min-width: 1200px;
-    justify-content: center;
-    // margin: 10px auto 0px;
-    overflow: hidden;
-}
-
-.content {
-    flex: 1;
-    height: auto;
-    box-sizing: border-box;
-}
-.content img{
-    width: 100%;
-    height: 100%;
-}
-
-// 轮播图
-.el-carousel__arrow{
-    width: 100px !important;
-    height: 100px !important;
-    font-size: 36px !important;
-}
-
-// 2. 空白待商榷位置
-.servers{
-    display: flex;
-    height: auto;
-    min-width: 1200px;
-    justify-content: center;
-    margin: 0px auto 10px;
-    overflow: hidden;
-    // border-radius: 0px 0px 15px 15px;
-    // background: url('../img/server_1.jpg');
-}
-
-// 服务类别
-// 收费标准区域
-.serves,
-.salary-area{
-    display: block;
-    height: auto;
-    width: 1200px;
-    // justify-content: center;
-    margin: 10px auto;
-    overflow: hidden;
-}
-.el-card{
-    margin: 10px;
-    border-radius: 15px;
-    cursor: pointer;
-}
-.serve-content{
-    padding: 5px;
-}
-.serve-content .serve-img{
-    display: flex;
-    justify-content: center;
-}
-.serve-content .serve-content{
-    overflow: hidden;
-    text-overflow: clip;
-    display: flex;
-    justify-content: center;
-    font-weight: 500;
-    // padding-bottom: 10px;
-    // height: 100px;
-    // border-bottom: 1px solid #EBEEF5;
-
-}
-
-.serves-more{
-    border: 1px solid #ebeef5;
-    border-radius: 15px;
-    width: 180px;
-    height: 40px;
-    // padding: 10px;
-    // display: flex;
-    // justify-content: center;
-    text-align: center;
-    margin: 0px auto;
-    cursor: pointer;
-}
-.serves-more a{
-    width: 180px !important;
-    height: 40px;
-    text-decoration: none;
-    color: #409EFF;
-    line-height: 40px;
-    
-}
 
 
 
