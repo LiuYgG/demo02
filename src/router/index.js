@@ -29,7 +29,23 @@ const routes = [
     path: '/dynamic',
     name: 'Dynamic',
     component: () => import('@/views/company/Dynamic.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('@/views/company/About.vue')
+  },
+  {
+    path: '/salary',
+    name: 'Salary',
+    component: () => import('@/views/company/Salary.vue')
+  },
+  {
+    path: '/serves',
+    name: 'Serves',
+    component: () => import('@/views/company/Serves.vue')
   }
+
 ]
 
 const router = new VueRouter({
