@@ -107,6 +107,7 @@
     background-color: #fff;
     border-bottom: 2px solid #409EFF !important;
     height: 80px;
+    color: #409EFF !important;
     // transition: 0.3s;
 }
 .el-menu-item:active,
@@ -114,6 +115,7 @@
     background-color: #fff;
     border-bottom: 2px solid #409EFF !important;
     height: 80px;
+    color: #409EFF !important;
 }
 .el-menu.el-menu--horizontal{
     border-bottom: none;
