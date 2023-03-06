@@ -27,11 +27,11 @@
 
             <!-- 发展历程 ：时间线 -->
             <div class="company-development">
-                <el-steps align-center>
-                    <el-step title="步骤1" description="这是一段很长很长很长的描述性文字"></el-step>
-                    <el-step title="步骤2" description="这是一段很长很长很长的描述性文字"></el-step>
-                    <el-step title="步骤3" description="这是一段很长很长很长的描述性文字"></el-step>
-                    <el-step title="步骤4" description="这是一段很长很长很长的描述性文字"></el-step>
+                <el-steps align-center active="4">
+                    <el-step icon="el-icon-success" title="步骤1" description="这是一段很长很长很长的描述性文字"></el-step>
+                    <el-step icon="el-icon-success" title="步骤2" description="这是一段很长很长很长的描述性文字"></el-step>
+                    <el-step icon="el-icon-success" title="步骤3" description="这是一段很长很长很长的描述性文字"></el-step>
+                    <el-step icon="el-icon-success" title="步骤4" description="这是一段很长很长很长的描述性文字"></el-step>
                 </el-steps>
             </div>
         </main>
@@ -82,7 +82,8 @@
         margin: 20px auto;
         width: 1200px;
         height: auto;
-        border: 1px solid;
+        border: 1px solid #d1d1d1;;
+        border-radius: 15px;
         padding: 20px;
     }
 </style>
