@@ -6,15 +6,20 @@
             <!-- 公司动态 -->
             <div class="company-news">
                 <el-table
-                    style="width: 100%">
+                :data="newsData"
+                style="width: 100%">
                     <el-table-column
                         label="标题">
-                        <el-link href="https://element.eleme.io" target="_blank">默认链接</el-link>
+                        <template slot-scope="scope">
+                            <a :href=" '/news/' + scope.row.id">{{ scope.row.title }}</a>
+                        </template>
                     </el-table-column>
                     <el-table-column
+                        prop="date"
                         label="发表时间"
                         width="180">
                     </el-table-column>
+                    
                 </el-table>
             </div>
 
@@ -43,7 +48,23 @@
         },
         data() {
             return {
-                
+                newsData: [{
+                    id: 1,
+                    date: '2016 / 05 / 02',
+                    title: "上海市普陀区金沙江路 1518 弄"
+                }, {
+                    id: 2,
+                    date: '2016 / 05 / 04',
+                    title: '上海市普陀区金沙江路 1517 弄'
+                }, {
+                    id: 3,
+                    date: '2016 / 05 / 01',
+                    title: '上海市普陀区金沙江路 1519 弄'
+                }, {
+                    id: 4,
+                    date: '2016 / 05 / 03',
+                    title: '上海市普陀区金沙江路 1516 弄'
+                }]
             }
         }
 
@@ -63,8 +84,9 @@
         border-radius: 15px;
         padding: 20px;
     }
-
-    .company-news .el-table{
-        cursor: pointer;
+    .company-news a{
+        color: #606266;
     }
+
+
 </style>
