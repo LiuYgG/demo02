@@ -22,6 +22,13 @@ const routes = [
     path: '/reg',
     name: 'Register',
     component: () => import('@/views/users/Register.vue'),
+  },
+
+  // company 目录
+  {
+    path: '/dynamic',
+    name: 'Dynamic',
+    component: () => import('@/views/company/Dynamic.vue')
   }
 ]
 

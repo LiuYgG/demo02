@@ -12,8 +12,8 @@
                 </div> -->
                 <div class="menu">
                     <el-menu mode="horizontal" :default-active="activeIndex">
-                        <el-menu-item v-for="(item, index) in menus" :key="index" :index="index">
-                            {{ item }}
+                        <el-menu-item v-for="(item, index) in menus" :key="index" :index="index" :class="{ is_active: $route.path === item.href}">
+                            <a :href="item.href">{{ item.name }}</a>
                         </el-menu-item>
                     </el-menu>
                 </div>
@@ -42,17 +42,25 @@
 </template>
 
 <script>
+
     export default {
         data(){
             return{
                 // 默认选中
-                activeIndex: 0,
+                // activeIndex: 0,
                 // menus的数据
-                menus:['首页', '服务保障', '服务类别', '收费标准', '关于我们', '公司动态'],
+                menus:[
+                    {name:'首页', href:'/'}, 
+                    {name:'服务保障', href:'/serves'}, 
+                    {name:'收费标准', href:'/salary'}, 
+                    {name:'关于我们', href: '/about'}, 
+                    {name:'公司动态', href:'/dynamic'}
+                ],
 
                 // 显示用户模块
-                type: 0,
+                type: 1,
             }
+            
         }
     }
 </script>
@@ -76,6 +84,7 @@
     min-width: 1200px;
     
 }
+
 .logo{
     line-height: 80px;
     margin-left: 150px;
@@ -88,14 +97,20 @@
 .el-menu .el-menu-item{
     color: #606266;
 }
+.nav-top .el-menu-item a{
+    height: 80px;
+    width: 60px;
+    text-align: center;
+    display: block;
+}
 .el-menu-item:hover{
     background-color: #fff;
     border-bottom: 2px solid #409EFF !important;
     height: 80px;
-    transition: 0.3s;
+    // transition: 0.3s;
 }
 .el-menu-item:active,
-.is-active{
+.is_active{
     background-color: #fff;
     border-bottom: 2px solid #409EFF !important;
     height: 80px;
