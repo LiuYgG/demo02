@@ -1,0 +1,234 @@
+/**
+
+main内容专区
+
+*/
+.wrapper {
+    display: flex;
+    height: auto;
+    min-width: 1200px;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    height: auto;
+    box-sizing: border-box;
+}
+.content img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 轮播图 */
+.el-carousel__arrow{
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 36px !important;
+}
+
+/* 2. 空白待商榷位置 */
+.nones{
+    display: flex;
+    height: auto;
+    min-width: 1200px;
+    justify-content: center;
+    margin: 0px auto 10px;
+    overflow: hidden;
+}
+
+/* 
+
+    服务类别CSS
+
+*/
+.serves{
+    display: block;
+    height: auto;
+    width: 1200px;
+    justify-content: center;
+    margin: 10px auto;
+    overflow: hidden;
+}
+.el-card{
+    margin: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.serve-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.serve-title p{
+    
+    padding: 10px;
+    width: 175px;
+    font-weight: 800;
+    font-size: 35px;
+    font-family: 'Microsoft YaHei Bold';
+    /* float: left; */
+    text-align: center;
+
+}
+.serve-title span{
+    display: inline-block;
+    border-bottom: 3px solid #f12f0d;
+    width: 90px;
+    /* float: left; */
+    position: absolute;
+    height: 40px;
+    height: 65px;
+    /* transition: all 0.5s ease-out 0.5s; */
+
+}
+.serve-content{
+    padding: 5px;
+}
+.serve-content .serve-img{
+    display: flex;
+    justify-content: center;
+}
+.serve-content .serve-content{
+    overflow: hidden;
+    text-overflow: clip;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+
+
+}
+/* 简要 */
+.fullServe{
+    background: url('https://11912270.s61i.faiusr.com/2/AD0IzojXBRACGAAgtruA2wUowrKmZzCADzjuBA.jpg.webp') no-repeat center;
+    width: 100%;
+    min-width: 1200px;
+    height: 622px;
+    display: flex;
+    margin-top: 20px;
+}
+.fullServe-left{
+    float: left;
+    width: 1200px;
+    height: 622px;
+}
+.fullServe-right{
+    float: left;
+    width: 950px;
+    height: 622px;
+}
+.fullServe-right-card{
+    margin-top: 30px;
+    height: 200px;
+}
+.fullServe-right-icon,
+.fullServe-right-title{
+    float: left;
+}
+.fullServe-right-title{
+    margin-left: 20px;
+    width: 200px;
+}
+.fullServe-right-title h2{
+    margin-bottom: 10px;
+}
+.fullServe-right-title span{
+    font-size: 14px;
+    display: inline-block;
+    width: 455px;
+}
+
+/* 
+    我们的承诺区块 CSS
+*/
+.we-promise{
+    overflow: hidden;
+    height: 726px;
+    width: 100%;
+    min-width: 1200px;
+    background: url('https://11912270.s61i.faiusr.com/2/AD0IzojXBRACGAAg6KSlwQUoz5S8pAYw-w441gU.jpg.webp') no-repeat 100%;
+}
+.promise-title{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0px;
+}
+.promise-title p{
+    padding: 10px;
+    width: 175px;
+    font-weight: 800;
+    font-size: 35px;
+    font-family: 'Microsoft YaHei Bold';
+    text-align: center;
+    color: #fff;
+    float: left;
+}
+.promise-title-en{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    top: -42px;
+
+}
+
+.promise-wrap{
+    height: 485px;
+    min-width: 1255px;
+}
+.promise-card{
+    width: 573px;
+    height: 100px;
+    border: 1px solid #fff;
+    margin: 40px 22px;
+    float: left;
+}
+.promise-card-icon,
+.promise-card-content{
+    float: left;
+}
+.promise-card-icon{
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background-color: #fff;
+    color: #f12f0d;
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.promise-card-content{
+    margin-top: 20px;
+    margin-left: 10px;
+    color: #fff;
+    width: 300px;
+}
+.promise-card-content h3{
+    margin-bottom: 5px;
+}
+.promise-card-content span{
+    font-size: 12px;
+}
+
+/* 车型 */
+.myCar{
+    width: 100%;
+    height: 500px;
+    /* background-color: #fff; */
+}
+.car-info-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.car-info-content{
+    width: 1200px;
+    margin: 10px auto;
+}
+.car-info-content .el-carousel__arrow{
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 20px !important;
+}
