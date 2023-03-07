@@ -1,10 +1,10 @@
-package com.demo02.app_backstage;
+package com.demo02.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AppBackstageApplicationTests {
+class AppApplicationTests {
 
     @Test
     void contextLoads() {

@@ -1,13 +1,13 @@
-package com.demo02.app_backstage;
+package com.demo02.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppBackstageApplication {
+public class AppApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AppBackstageApplication.class, args);
+        SpringApplication.run(AppApplication.class, args);
     }
 
 }
