@@ -1,14 +1,17 @@
-package com.demo02.app.Controller;
+package com.example.app.controller;
 
+
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 @RestController
+@Slf4j
 public class LoginController {
 
-    @GetMapping ("/login")
-    public String UserLogin() {
+
+    @GetMapping(value = "/login")
+    public String UserLogin(){
         return "LoginPage";
     }
 }
