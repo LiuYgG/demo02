@@ -12,9 +12,9 @@
                     <el-menu-item>XX 后台管理系统</el-menu-item>
                     <el-submenu style="float: right;">
                         <template slot="title">我的工作台</template>
-                        <el-menu-item index="2-1">选项1</el-menu-item>
-                        <el-menu-item index="2-2">选项2</el-menu-item>
-                        <el-menu-item index="2-3">选项3</el-menu-item>
+                            <el-menu-item index="2-1" style="text-align: center;">个人资料</el-menu-item>
+                            <el-menu-item index="2-2" style="text-align: center;">个人设置</el-menu-item>
+                            <el-menu-item index="2-3" style="text-align: center;" @click="logOut">退出登录</el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-header>
@@ -66,6 +66,7 @@
                                         </el-col>
                                     </el-row>
                                 </div>
+
                             </el-tab-pane>
                         </el-tabs>
                     </div>
@@ -91,6 +92,12 @@
                 ]
             }
         },
+
+        methods:{
+            logOut(){
+                alert('已退出');
+            }
+        }
     }
 </script>
 

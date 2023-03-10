@@ -7,15 +7,7 @@
     height: 800px;
 }
 
-/* CSS */
-.tags{
-}
-.tags:hover{
-    cursor: pointer;
-}
-.tags .el-tag{
-    margin: 0px 5px;
-}
+
 /* 首页不同模块数据量 */
 .index-datas-icon,
 .solid-margin,
