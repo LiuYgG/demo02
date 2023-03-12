@@ -1,7 +1,8 @@
 <template>
     <div>
+        <HeaderMenu></HeaderMenu>
         <el-container>
-            <el-header>
+            <!-- <el-header>
                 <el-menu
                 class="el-menu-demo"
                 mode="horizontal"
@@ -17,33 +18,12 @@
                             <el-menu-item index="2-3" style="text-align: center;" @click="logOut">退出登录</el-menu-item>
                     </el-submenu>
                 </el-menu>
-            </el-header>
+            </el-header> -->
+            
             <el-container>
-                <el-aside width="200px">
-                    <el-row class="tac">
-                        <el-col>
-                            <el-menu
-                            :default-active="activeAside"
-                            class="el-menu-vertical-demo"
-                            @open="handleOpen"
-                            @close="handleClose">
-                                <el-menu-item index="0">
-                                    <i class="el-icon-s-data"></i>
-                                    <span slot="title">首页</span>
-                                </el-menu-item>
-                                <el-submenu v-for="item in menus" :key="item" :index="item.id">
-                                    <template slot="title">
-                                        <i :class="item.icon"></i>
-                                        <span>{{ item.title }}</span>
-                                    </template>
-                                    <el-menu-item-group>
-                                        <el-menu-item :index="item.id">{{ item.text }}</el-menu-item>
-                                    </el-menu-item-group>
-                                </el-submenu>
-                            </el-menu>
-                        </el-col>
-                    </el-row>
-                </el-aside>
+                
+                <AsideMenu></AsideMenu>
+
                 <el-main>
                     <div class="tags">
                         <el-tabs type="border-card" v-model="activeTab" closable>
@@ -75,35 +55,34 @@
 </template>
 
 <script>
-    export default {
-        data(){
-            return{
-                activeAside: '0',
-                // 左侧菜单
-                menus:[
-                    {id:"1", icon:"el-icon-user", title: "人员管理", text: "公司人员"},
-                    {id:"2", icon:"el-icon-receiving", title: "运营管理", text: "活动一"},
-                    {id:"3", icon:"el-icon-data-board", title: "内容管理", text: "文章列表"},
-                    {id:"4", icon:"el-icon-setting", title: "设置", text: "站点设置"}
-                ],
+import HeaderMenu from '../common/HeaderMenu.vue';
+import AsideMenu from '../common/AsideMenu.vue';
 
+
+    export default {
+        components: { HeaderMenu, AsideMenu },
+
+        data() {
+            return {
+                activeAside: "0",
+                
                 // 不同模块数据量
-                datas:[
-                    {icon: 'el-icon-shopping-cart-full', title: '已注册司机', nums: '9999'},
-                    {icon: 'el-icon-user', title: '已注册用户', nums: '9999'},
-                    {icon: 'el-icon-pie-chart', title: '订单成交量', nums: '9999'},
-                    {icon: 'el-icon-data-line', title: '活动参与数', nums: '99%'},
+                datas: [
+                    { icon: "el-icon-shopping-cart-full", title: "已注册司机", nums: "9999" },
+                    { icon: "el-icon-user", title: "已注册用户", nums: "9999" },
+                    { icon: "el-icon-pie-chart", title: "订单成交量", nums: "9999" },
+                    { icon: "el-icon-data-line", title: "活动参与数", nums: "99%" },
                 ],
                 activeTab: "0"
+            };
+        },
+        methods: {
+            logOut() {
+                alert("已退出");
             }
         },
-
-        methods:{
-            logOut(){
-                alert('已退出');
-            }
-        },
-    }
+    
+}
 </script>
 
 <style lang="less" scoped>
