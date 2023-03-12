@@ -31,14 +31,13 @@
                                     <i class="el-icon-s-data"></i>
                                     <span slot="title">首页</span>
                                 </el-menu-item>
-                                <el-submenu index="1">
+                                <el-submenu v-for="item in menus" :key="item" :index="item.id">
                                     <template slot="title">
-                                    <i class="el-icon-location"></i>
-                                    <span>导航一</span>
+                                        <i :class="item.icon"></i>
+                                        <span>{{ item.title }}</span>
                                     </template>
                                     <el-menu-item-group>
-                                        <el-menu-item index="1-1">选项1</el-menu-item>
-                                        <el-menu-item index="1-2">选项2</el-menu-item>
+                                        <el-menu-item :index="item.id">{{ item.text }}</el-menu-item>
                                     </el-menu-item-group>
                                 </el-submenu>
                             </el-menu>
@@ -47,8 +46,8 @@
                 </el-aside>
                 <el-main>
                     <div class="tags">
-                        <el-tabs type="border-card">
-                            <el-tab-pane label="首页">
+                        <el-tabs type="border-card" v-model="activeTab" closable>
+                            <el-tab-pane label="首页" name="0">
                                 <div class="index-datas">
                                     <el-row :gutter="20">
                                         <el-col :span="6" v-for="data in datas"
@@ -66,7 +65,6 @@
                                         </el-col>
                                     </el-row>
                                 </div>
-
                             </el-tab-pane>
                         </el-tabs>
                     </div>
@@ -81,7 +79,13 @@
         data(){
             return{
                 activeAside: '0',
-
+                // 左侧菜单
+                menus:[
+                    {id:"1", icon:"el-icon-user", title: "人员管理", text: "公司人员"},
+                    {id:"2", icon:"el-icon-receiving", title: "运营管理", text: "活动一"},
+                    {id:"3", icon:"el-icon-data-board", title: "内容管理", text: "文章列表"},
+                    {id:"4", icon:"el-icon-setting", title: "设置", text: "站点设置"}
+                ],
 
                 // 不同模块数据量
                 datas:[
@@ -89,7 +93,8 @@
                     {icon: 'el-icon-user', title: '已注册用户', nums: '9999'},
                     {icon: 'el-icon-pie-chart', title: '订单成交量', nums: '9999'},
                     {icon: 'el-icon-data-line', title: '活动参与数', nums: '99%'},
-                ]
+                ],
+                activeTab: "0"
             }
         },
 
@@ -97,7 +102,7 @@
             logOut(){
                 alert('已退出');
             }
-        }
+        },
     }
 </script>
 

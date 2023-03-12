@@ -7,8 +7,13 @@
     height: 800px;
 }
 
+.el-main{
+    padding: 0px !important;
+}
+
 
 /* 首页不同模块数据量 */
+
 .index-datas-icon,
 .solid-margin,
 .index-datas-content{
