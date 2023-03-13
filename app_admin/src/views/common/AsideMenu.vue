@@ -7,8 +7,6 @@
                     :default-active="activeAside"
                     class="el-menu-vertical-demo"
                     :router="true"
-                    @open="handleOpen"
-                    @close="handleClose"
                     style="height: 100%;">
                     <template v-for="(item) in menus">
                         <!-- 有次级菜单的，则展开子选项 -->
@@ -51,7 +49,6 @@
             }
         },
         mounted(){
-        
             this.$axios.get('/api/leftmenus').then(response => {
                 this.menus = response.data.menus
                 console.log(response.data)
