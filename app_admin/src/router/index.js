@@ -8,7 +8,13 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+
+    // redirect:'/main',
+    children:[
+      { path:'/main', name:'main', component: ()=> import('@/views/common/MainContent.vue') },
+      { path:'/webset', name:'webset', component: ()=> import('@/views/setting/webset.vue')}
+    ]
   }
 ]
 
